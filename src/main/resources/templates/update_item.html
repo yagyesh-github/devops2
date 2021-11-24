@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Item List</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+		 <div class="container">
+        <h1>Item List</h1>
+        <hr>
+        <h2>Update Item</h2>
+
+        <form action="#" th:action="@{/saveItem}" th:object="${item}" method="POST">
+
+            <!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{id}" />
+
+            <input type="text" th:field="*{iname}" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{icategory}" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{iprice}" class="form-control mb-4 col-4">
+
+            <button type="submit" class="btn btn-info col-2"> Update Item</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/}"> Back to Item List</a>
+    </div>
+</body>
+</html>
